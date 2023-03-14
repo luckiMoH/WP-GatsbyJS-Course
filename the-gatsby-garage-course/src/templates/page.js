@@ -2,11 +2,12 @@ import React from "react";
 import { BlockRendererProvider } from "@webdeveducation/wp-block-tools";
 import { blockRendererComponent } from "../config/blockRendererComponents";
 import { Link } from "gatsby";
+import { Layout } from "../components";
 
 const Page = (props) => {
   console.log("PAGE PROPS: ", props);
   return (
-    <div>
+    <Layout>
       <BlockRendererProvider
         allBlocks={props.pageContext.blocks}
         renderComponent={blockRendererComponent}
@@ -22,7 +23,7 @@ const Page = (props) => {
           );
         }}
       />
-    </div>
+    </Layout>
   );
 };
 
