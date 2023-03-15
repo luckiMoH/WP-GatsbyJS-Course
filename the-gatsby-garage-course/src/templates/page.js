@@ -5,7 +5,6 @@ import { Link } from "gatsby";
 import { Layout } from "../components";
 
 const Page = (props) => {
-  console.log("PAGE PROPS: ", props);
   return (
     <Layout>
       <BlockRendererProvider
