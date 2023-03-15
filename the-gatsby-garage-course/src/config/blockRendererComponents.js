@@ -4,11 +4,18 @@ import {
   getClasses,
   getStyles,
 } from "@webdeveducation/wp-block-tools";
-import { CallToActionButton, Cover, MediaText } from "../components";
+import { CallToActionButton, Cover, MediaText, TickItem } from "../components";
 import { GatsbyImage } from "gatsby-plugin-image";
 
 export const blockRendererComponent = (block) => {
   switch (block.name) {
+    case "tgg/tickitem": {
+      return (
+        <TickItem key={block.id}>
+          <BlockRenderer blocks={block.innerBlocks} />
+        </TickItem>
+      );
+    }
     case "core/cover": {
       console.log("COVER BLOCK: ", block);
       return (
